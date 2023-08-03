@@ -25,6 +25,7 @@ public class ItemService {
         if(!categoryService.getCategoryById(item.getCategory().getCategoryId()).isPresent()){
             return null;
         }
+        item.setCategory(categoryService.getCategoryById(item.getCategory().getCategoryId()).get());
         return itemRepository.save(item);
     }
 

@@ -25,6 +25,7 @@ public class ItemController {
     }
     @PostMapping("/new")
     public ResponseEntity<?> newItem(@RequestBody Item item){
+        System.out.println(item.getItemDescription());
         Item newItem = itemService.newItem(item);
         if(newItem == null){
             return ResponseEntity.notFound().build();
